@@ -1,15 +1,16 @@
-var gulp = require('gulp');
-var babel = require('gulp-babel');
+var gulp = require("gulp");
+var babel = require("gulp-babel");
 
-gulp.task('bundle', function () {
+gulp.task("bundle", (done) => {
   gulp
-    .src('./src/modal.js')
+    .src("./src/modal.js")
     .pipe(
       babel({
-        presets: ['env'],
+        presets: ["env"],
       })
     )
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(gulp.dest("./dist/js/"));
 
-  gulp.src('./src/scss/*.scss').pipe(gulp.dest('./dist/scss/'));
+  gulp.src("./src/scss/*.scss").pipe(gulp.dest("./dist/scss/"));
+  done();
 });
